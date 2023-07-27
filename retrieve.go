@@ -1,8 +1,6 @@
 package main
 
 import (
-	"fmt"
-
 	"github.com/go-redis/redis"
 )
 
@@ -12,12 +10,12 @@ var client = redis.NewClient(&redis.Options{
 	DB:       0,
 })
 
-func Retrieve() {
+func Retrieve() (*string, error) {
 	val, err := client.Get("name").Result()
 
 	if err != nil {
-		panic(err)
+		return nil, err
 	}
 
-	fmt.Println(val)
+	return &val, nil
 }
