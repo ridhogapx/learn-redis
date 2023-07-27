@@ -21,4 +21,12 @@ func main() {
 
 	fmt.Println(ping)
 
+	err = client.Set("name", "Raymond", 0).Err()
+
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println("Setting values is success!")
+
 }
