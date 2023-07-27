@@ -1,6 +1,8 @@
 package main
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestRetrieve(t *testing.T) {
 	result, err := Retrieve()
@@ -11,9 +13,7 @@ func TestRetrieve(t *testing.T) {
 	}
 
 	// Case: Function should return as we expect
-	expect := "Raymond"
-
-	if result != &expect {
+	if *result != "Raymond" {
 		t.Error("Result is not as expected!")
 	}
 }
