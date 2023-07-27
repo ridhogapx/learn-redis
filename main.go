@@ -6,13 +6,13 @@ import (
 	"github.com/go-redis/redis"
 )
 
-func main() {
-	client := redis.NewClient(&redis.Options{
-		Addr:     "localhost:6379",
-		Password: "",
-		DB:       0,
-	})
+var client = redis.NewClient(&redis.Options{
+	Addr:     "localhost:6379",
+	Password: "",
+	DB:       0,
+})
 
+func main() {
 	ping, err := client.Ping().Result()
 
 	if err != nil {
