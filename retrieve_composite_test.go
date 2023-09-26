@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"testing"
 )
 
@@ -29,4 +30,6 @@ func TestRetrieveComposite(t *testing.T) {
 	if manga.Author != "Hajime" {
 		t.Error("Test is not as expected")
 	}
+
+  fmt.Println("Manga:", manga.Title)
 }
